@@ -17,8 +17,8 @@ Full stack application combining backend (ASP.NET Core + SQLite) and frontend (V
 
 ```bash
 # Clone the repositories
-git clone https://github.com/noitorraa/SibersProjectBackend.git SibersProjectBackend
-git clone https://github.com/noitorraa/SibersProjectFrontend.git SibersProjectFrontend
+git clone https://github.com/noitorraa/SibersProjectBackend.git
+git clone https://github.com/noitorraa/SibersProjectFrontend.git
 
 # Build and start all services
 docker-compose up -d --build
