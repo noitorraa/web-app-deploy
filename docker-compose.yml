@@ -1,0 +1,38 @@
+services:
+  backend:
+    build:
+      context: ./SibersProjectBackend
+      dockerfile: sibersProject/Dockerfile
+    container_name: sibers-backend
+    ports:
+      - "8080:8080"
+    volumes:
+      - sqlite-data:/app/Database
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - SQLITE_PATH=/app/Database/sibersDB.db
+    restart: unless-stopped
+    networks:
+      - app-network
+
+  frontend:
+    build:
+      context: ./SibersProjectFrontend
+      dockerfile: Dockerfile
+    container_name: sibers-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - app-network
+
+volumes:
+  sqlite-data:
+    driver: local
+
+networks:
+  app-network:
+    driver: bridge
