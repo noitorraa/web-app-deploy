@@ -4,8 +4,8 @@ Full stack application combining backend (ASP.NET Core + SQLite) and frontend (V
 
 ## Structure
 
-- **Backend**: ASP.NET Core Web API with SQLite database
-- **Frontend**: Vue 3 application with Vite, Pinia, and Vue Router
+- **Backend**: ASP.NET Core Web API with SQLite database (`./SibersProjectBackend`)
+- **Frontend**: Vue 3 application with Vite, Pinia, and Vue Router (`./SibersProjectFrontend`)
 - **Database**: SQLite (persistent volume)
 
 ## Prerequisites
@@ -16,23 +16,25 @@ Full stack application combining backend (ASP.NET Core + SQLite) and frontend (V
 ## Quick Start
 
 ```bash
-# Clone the repository
-git clone git@github.com:noitorraa/web-app-deploy.git
+# Clone the repositories
+git clone https://github.com/noitorraa/SibersProjectBackend.git SibersProjectBackend
+git clone https://github.com/noitorraa/SibersProjectFrontend.git SibersProjectFrontend
+
 # Build and start all services
 docker-compose up -d --build
 ```
 
 ## Services
 
-| Service  | Port | Description       |
-| -------- | ---- | ----------------- |
+| Service | Port | Description |
+|---------|------|-------------|
 | Frontend | 3000 | Vue 3 application |
-| Backend  | 8080 | ASP.NET Core API  |
+| Backend | 8080 | ASP.NET Core API |
 
 ## Access
 
-- **Frontend**: <http://localhost:3000>
-- **Backend API**: <http://localhost:8080> (also accessible via /api proxy from frontend)
+- **Frontend**: http://localhost:3000
+- **Backend API**: http://localhost:8080 (also accessible via /api proxy from frontend)
 
 ## Management
 
